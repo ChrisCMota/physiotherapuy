@@ -68,6 +68,17 @@ public class PatientRecord {
     @Column(name = "link_photo", length = 255)
     private String linkPhoto;
 
+    @Column(name = "active")
+    private int active;
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
+    }
+
     public int getIdRecord() {
         return idRecord;
     }
