@@ -10,5 +10,6 @@ public interface IRecordService {
     public List<PatientRecord> findByName(String name);
     public PatientRecord findById(Integer id);
     public boolean deleteById(Integer id);
+    public List<PatientRecord> findAll();
 
 }

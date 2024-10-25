@@ -28,8 +28,8 @@ public class RecordServiceImpl implements IRecordService{
     }
 
     @Override
-    public List<PatientRecord> findByName(String name) {
-        return dao.findByNamePatientContaining(name);
+    public List<PatientRecord> findByName(String name)  {
+        return dao.findByNamePatientRecordContaining(name);
     }
 
     @Override
@@ -46,5 +46,10 @@ public class RecordServiceImpl implements IRecordService{
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<PatientRecord> findAll() {
+        return List.of((PatientRecord) dao.findAll());
     }
 }

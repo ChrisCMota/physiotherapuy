@@ -1,8 +1,11 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Entity
 @Table(name="tbl_client")
 public class PatientRecord {
@@ -70,6 +73,18 @@ public class PatientRecord {
 
     @Column(name = "active")
     private int active;
+
+    @OneToMany(mappedBy = "record", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("record")
+    private List<Midia> midias;
+
+    public List<Midia> getMidias() {
+        return midias;
+    }
+
+    public void setMidias(List<Midia> midias) {
+        this.midias = midias;
+    }
 
     public int getActive() {
         return active;
